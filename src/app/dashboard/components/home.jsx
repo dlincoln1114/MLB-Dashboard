@@ -6,13 +6,13 @@ export default function Home() {
         <p className="text-gray-600">Stay updated with live scores, stats, and more!</p>
         
         {/* Live Scores*/}
-        <div className="bg-white shadow-md p-4 rounded-lg">
+        <div>
           <h2 className="text-lg font-semibold">Live Scores</h2>
           <p className="text-gray-500">No games in progress right now.</p>
         </div>
         
         {/* Additional Content...*/}
-        <div className="bg-white shadow-md p-4 rounded-lg">
+        <div >
           <h2 className="text-lg font-semibold">Current Standings</h2>
           <p className="text-gray-500">placeholder paragraph...</p>
         </div>

@@ -6,7 +6,7 @@ export default function Schedule() {
         <p className="text-gray-600">Upcoming games will appear here.</p>
         
         {/* Placeholder for Game Schedule */}
-        <div className="bg-white shadow-md p-4 rounded-lg">
+        <div>
           <h3 className="text-lg font-semibold">Upcoming Games</h3>
           <p className="text-gray-500">Schedule info will appear here.</p>
         </div>

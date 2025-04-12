@@ -1,10 +1,8 @@
-const chalk = require('chalk');
-
-const log = {
-  info: (msg) => console.log(`${chalk.blue('[INFO]')} ${msg}`),
-  success: (msg) => console.log(`${chalk.green('[SUCCESS]')} ${msg}`),
-  warn: (msg) => console.warn(`${chalk.yellow('[WARN]')} ${msg}`),
-  error: (msg) => console.error(`${chalk.red('[ERROR]')} ${msg}`),
-};
-
-module.exports = log;
+// Simple logger functions without chalk
+export const log = {
+    info: (msg) => console.log(`[INFO] ${msg}`),
+    warn: (msg) => console.warn(`[WARN] ${msg}`),
+    error: (msg) => console.error(`[ERROR] ${msg}`),
+    success: (msg) => console.log(`[SUCCESS] ${msg}`)
+  };
+  

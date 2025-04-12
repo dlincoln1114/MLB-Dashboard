@@ -1,13 +1,14 @@
 const express = require('express');
-const router = express.Router();
 const { getStandings } = require('../services/mlbService');
+
+const router = express.Router();
 
 router.get('/standings', async (req, res) => {
   try {
-    const data = await getStandings();
-    res.json(data);
+    const standings = await getStandings();
+    res.json(standings);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch standings.' });
+    res.status(500).json({ error: err.message });
   }
 });
 

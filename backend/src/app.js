@@ -1,12 +1,15 @@
 const express = require('express');
-const morgan = require('morgan');
-const mlbRoutes = require('./routes/mlb');
-
+const mlbService = require('./services/mlbService');
 const app = express();
 
-app.use(morgan('dev'));
-app.use(express.json());
-
-app.use('/api/mlb', mlbRoutes);
+app.get('/standings', async (req, res) => {
+  try {
+    const standings = await mlbService.getStandings();
+    res.json(standings);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching standings', error: error.message });
+  }
+});
 
 module.exports = app;
+

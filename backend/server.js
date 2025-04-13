@@ -1,18 +1,24 @@
+// server.js
+
 require('dotenv').config();
+const express = require('express');
 const app = require('./src/app');
 const { connectRedis } = require('./src/utils/cache');
 
-const PORT = process.env.PORT || 5000;
+const PORT = 3001
 
-async function startServer() {
+const startServer = async () => {
   try {
     await connectRedis();
+    
     app.listen(PORT, () => {
-      console.log(`Server is running at http://localhost:${PORT}`);
+      console.log(`🚀 Server running at http://localhost:${PORT}`);
     });
-  } catch (err) {
-    console.error(`Server failed to start: ${err.message}`);
+  } catch (error) {
+    console.error('❌ Failed to start server:', error.message);
+    process.exit(1);
   }
-}
+};
 
 startServer();
+
